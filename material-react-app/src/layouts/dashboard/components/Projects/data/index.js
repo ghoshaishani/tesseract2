@@ -33,8 +33,12 @@ import team1 from "assets/images/team-1.jpg";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
+import React,{ useState } from "react";
+
 
 export default function data() {
+
+
   const avatars = (members) =>
     members.map(([image, name]) => (
       <Tooltip key={name} title={name} placeholder="bottom">
@@ -61,25 +65,25 @@ export default function data() {
     ));
 
   const Company = ({ image, name }) => (
-    <MDBox display="flex" alignItems="center" lineHeight={1}>
-      <MDAvatar src={image} name={name} size="sm" />
+    <MDBox display="flex" alignItems="Left" lineHeight={1}>
       <MDTypography variant="button" fontWeight="medium" ml={1} lineHeight={1}>
         {name}
       </MDTypography>
     </MDBox>
   );
 
+
+
   return {
     columns: [
-      { Header: "companies", accessor: "companies", width: "45%", align: "left" },
-      { Header: "members", accessor: "members", width: "10%", align: "left" },
-      { Header: "budget", accessor: "budget", align: "center" },
-      { Header: "completion", accessor: "completion", align: "center" },
+      { Header: "Types Of Cyber Atacks", accessor: "companies", width: "45%", align: "left" },
+      { Header: "Count(in Millions)", accessor: "budget", align: "center" },
+      { Header: "Success of affecting victims", accessor: "completion", align: "center" },
     ],
 
     rows: [
       {
-        companies: <Company image={logoXD} name="Material UI XD Version" />,
+        companies: <Company name="Cyber Attack1" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -92,17 +96,17 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $14,000
+            14
           </MDTypography>
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={60} color="info" variant="gradient" label={false} />
+            <MDProgress value={70} color="info" variant="gradient" label={false} />
           </MDBox>
         ),
       },
       {
-        companies: <Company image={logoAtlassian} name="Add Progress Track" />,
+        companies: <Company name="Cyber Attack2" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -113,7 +117,7 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $3,000
+            3
           </MDTypography>
         ),
         completion: (
@@ -123,7 +127,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoSlack} name="Fix Platform Errors" />,
+        companies: <Company name="Cyber Attack3" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -134,17 +138,17 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            Not set
+            50
           </MDTypography>
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={100} color="success" variant="gradient" label={false} />
+            <MDProgress value={50} color="info" variant="gradient" label={false} />
           </MDBox>
         ),
       },
       {
-        companies: <Company image={logoSpotify} name="Launch our Mobile App" />,
+        companies: <Company name="Cyber Attack4" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -157,17 +161,17 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $20,500
+            20.5
           </MDTypography>
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={100} color="success" variant="gradient" label={false} />
+            <MDProgress value={75} color="info" variant="gradient" label={false} />
           </MDBox>
         ),
       },
       {
-        companies: <Company image={logoJira} name="Add the New Pricing Page" />,
+        companies: <Company  name="Cyber Attack4" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([[team4, "Jessica Doe"]])}
@@ -175,7 +179,7 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $500
+            500
           </MDTypography>
         ),
         completion: (
@@ -185,7 +189,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoInvesion} name="Redesign New Online Shop" />,
+        companies: <Company  name="Cyber Attack5" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -196,7 +200,7 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $2,000
+            2,00
           </MDTypography>
         ),
         completion: (

@@ -20,6 +20,8 @@ import Icon from "@mui/material/Icon";
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
+import MDInput from "components/MDInput";
+import MDButton from "components/MDButton";
 
 // Material Dashboard 2 React example components
 import TimelineItem from "examples/Timeline/TimelineItem";
@@ -29,22 +31,28 @@ function OrdersOverview() {
     <Card sx={{ height: "100%" }}>
       <MDBox pt={3} px={3}>
         <MDTypography variant="h6" fontWeight="medium">
-          Orders overview
+          Check Cyber Threats
         </MDTypography>
-        <MDBox mt={0} mb={2}>
-          <MDTypography variant="button" color="text" fontWeight="regular">
-            <MDTypography display="inline" variant="body2" verticalAlign="middle">
-              <Icon sx={{ color: ({ palette: { success } }) => success.main }}>arrow_upward</Icon>
-            </MDTypography>
-            &nbsp;
-            <MDTypography variant="button" color="text" fontWeight="medium">
-              24%
-            </MDTypography>{" "}
-            this month
-          </MDTypography>
-        </MDBox>
       </MDBox>
-      <MDBox p={2}>
+      <MDBox pt={4} pb={3} px={3}>
+          <MDBox component="form" role="form">
+            <MDBox mb={2}>
+              <MDInput type="text" label="input 1" variant="standard" fullWidth />
+            </MDBox>
+            <MDBox mb={2}>
+              <MDInput type="text" label="input 2" variant="standard" fullWidth />
+            </MDBox>
+            <MDBox mb={2}>
+              <MDInput type="text" label="input 3" variant="standard" fullWidth />
+            </MDBox>
+            <MDBox mt={4} mb={1}>
+              <MDButton variant="gradient" color="info" fullWidth>
+                Submit
+              </MDButton>
+            </MDBox>
+          </MDBox>
+        </MDBox>
+      {/* <MDBox p={2}>
         <TimelineItem
           color="success"
           icon="notifications"
@@ -76,7 +84,7 @@ function OrdersOverview() {
           dateTime="18 DEC 4:54 AM"
           lastItem
         />
-      </MDBox>
+      </MDBox> */}
     </Card>
   );
 }

@@ -17,6 +17,9 @@ Coded by www.creative-tim.com
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 
+import ChatBot from 'react-simple-chatbot';
+import { ThemeProvider } from 'styled-components';
+
 // @mui icons
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -51,7 +54,95 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 
+const steps = [
+  {
+      id: '0',
+      message: 'Hey User!',
+
+      // This calls the next id
+      // i.e. id 1 in this case
+      trigger: '1',
+  }, {
+      id: '1',
+
+      // This message appears in
+      // the bot chat bubble
+      message: 'Please write your username',
+      trigger: '2'
+  }, {
+      id: '2',
+
+      // Here we want the user
+      // to enter input
+      user: true, 
+      trigger: '3',
+  }, {
+      id: '3',
+      message: " hi {previousValue}, how can I help you?",
+      trigger: 4
+  }, {
+      id: '4',
+      options: [
+          { value: 1, label: 'View Cyber threats' ,trigger:5},
+          { value: 2, label: 'Read Articles',trigger:6},
+
+      ],
+  },{
+    id: '5',
+    message: "What would you like to know about cyber threats?",
+    trigger: 7
+},{
+  id: '6',
+  message: "What kind of articles do you want to see?",
+  trigger: 7
+},{
+    id: '7',
+
+    // Here we want the user
+    // to enter input
+    user: true, 
+    trigger: '8',
+},{
+  id: '8',
+  message: "Sorry I cant help you with that Right now! You can come back later to check. THANKS!",
+  end:true
+},
+];
+
+// Creating our own theme
+const theme = {
+  background: '#0F37881',
+  headerBgColor: '#197B99',
+  headerFontSize: '20px',
+  botBubbleColor: '#0F3789',
+  headerFontColor: 'white',
+  botFontColor: 'white',
+  userBubbleColor: '#FF5733',
+  userFontColor: 'white',
+};
+
+// Set some properties of the bot
+const config = {
+  floating: true,
+};
+
+function App() {
+  return (
+      <div className="App">
+          <ThemeProvider theme={theme}>
+              <ChatBot
+                  headerTitle="Tesseract"
+                  steps={steps}
+                  {...config}
+
+              />
+          </ThemeProvider>
+      </div>
+  );
+}
+
 function Overview() {
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -200,4 +291,4 @@ function Overview() {
   );
 }
 
-export default Overview;
+export default App;
