@@ -14,6 +14,6 @@ Coded by www.creative-tim.com
 */
 
 export default {
-  labels: ["monday", "T", "W", "T", "F", "S", "S"],
+  labels: ["THREAT 1", "THREAT 2", "THREAT 3", "THREAT 4", "THREAT 5", "THREAT 6", "THREAT 7"],
   datasets: { label: "Sales", data: [100, 20, 10, 22, 50, 10, 40] },
 };
